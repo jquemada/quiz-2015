@@ -1,6 +1,10 @@
 <table>
-<% var i; for (i=0; i < quizes.length; i++) { %>        
-   <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr> 
-<% } %>
-</table><p>
-<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
+  <% var i; for (i=0; i < quizes.length; i++) { %>        
+    <tr>
+      <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
+    </tr> 
+  <% } %>
+</table>
+<p/>
+<a href="/quizes/new"><button>Crear pregunta</button></a>
