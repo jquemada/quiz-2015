@@ -1,5 +1,18 @@
 var models = require('../models/models.js');
 
+// MW que permite acciones solamente si el quiz objeto pertenece al usuario logeado o si es cuenta admin
+exports.ownershipRequired = function(req, res, next){
+    var objQuizOwner = req.quiz.UserId;
+    var logUser = req.session.user.id;
+    var isAdmin = req.session.user.isAdmin;
+
+    if (isAdmin || objQuizOwner === logUser) {
+        next();
+    } else {
+        res.redirect('/');
+    }
+};
+
 // Autoload :id
 exports.load = function(req, res, next, quizId) {
   models.Quiz.find({
