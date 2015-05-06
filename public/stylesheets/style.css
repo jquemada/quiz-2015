@@ -8,7 +8,9 @@ body                 { font: 16px Georgia, serif; }
 section > div        { padding: 20px; }
 header, nav, section { background: #eee; text-align: center;}
 footer               { background: #eee; text-align: center;}
-nav span             { margin: 0px 10px 0px 0px;}
+nav span             { margin: 0px 10px 0px 0px;
+  					   width: 100%;
+  					   display: inline-block;}
 
 #ErrorMsgs           { color: #f61; font-size: smaler}
 .right 				 {float: right;}

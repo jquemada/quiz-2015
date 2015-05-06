@@ -28,6 +28,7 @@ router.post('/user',  userController.create);     // registrar usuario
 router.get('/user/:userId(\\d+)/edit',  sessionController.loginRequired, userController.ownershipRequired, userController.edit);     // editar información de cuenta
 router.put('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.update);     // actualizar información de cuenta
 router.delete('/user/:userId(\\d+)',  sessionController.loginRequired, userController.ownershipRequired, userController.destroy);     // borrar cuenta
+router.get('/user/:userId(\\d+)/quizes',  quizController.index);     // ver las preguntas de un usuario
 
 // Definición de rutas de /quizes
 router.get('/quizes',                      quizController.index);
